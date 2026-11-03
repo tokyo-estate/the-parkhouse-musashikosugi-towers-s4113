@@ -332,7 +332,31 @@ figcaption .d{display:none}
 .hero .info .spec{flex-wrap:wrap}
 .bar .brand small .nw{white-space:nowrap}  /* スマホの2行表示は「幕張ベイパーク／ライズゲートタワー 1819」で折る */
 /* ---- ザ・パークハウス武蔵小杉タワーズS4113 ---- */
-@media (max-aspect-ratio:1/1){.hero .media{aspect-ratio:16/9;height:auto;min-height:0}.hero .media2{aspect-ratio:16/9}}
+/* 公式PR映像のテロップ（画面中央）と重ならないよう、タイトルは映像の上でなく直下の帯に置く（2026-11-04 ユーザー指摘） */
+.hero .media{aspect-ratio:16/9;height:auto;min-height:0;max-height:100svh}
+@media (min-aspect-ratio:1/1){.hero .media{aspect-ratio:auto;max-height:none;width:100%;height:min(56.25vw,calc(100svh - 232px))}.tband h1 br{display:none}.tband .nm{flex-wrap:nowrap}.tband{padding:20px 64px 22px;align-items:center}.tband .cp{display:none}.tband .nm{margin-top:8px}.tband .no{font-size:clamp(38px,3.6vw,52px)}.tband .spec{margin-top:10px}.tband .p b{font-size:clamp(30px,3vw,44px)}}
+.hero .media2{aspect-ratio:16/9}
+.hero .media .ov,.hero .media .scroll,.hero .info{display:none!important}
+.hero .media::after{background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 18%)!important}
+.tband{background:#0b0d10;color:#fff;padding:30px 64px 36px;display:flex;align-items:flex-end;justify-content:space-between;gap:28px;flex-wrap:wrap;border-bottom:1px solid rgba(201,169,98,.18)}
+.tband .l{min-width:0}
+.tband .en{display:flex;align-items:center;gap:14px;font-size:11px;letter-spacing:.32em;color:var(--gold2);text-transform:uppercase}
+.tband .en::before{content:"";width:34px;height:1px;background:var(--gold2)}
+.tband .cp{font-size:clamp(14px,1.6vw,18px);letter-spacing:.2em;font-weight:300;margin-top:12px;color:#eae4d8}
+.tband .nm{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-top:10px}
+.tband .no{font-size:clamp(40px,5vw,64px);font-weight:200;line-height:1;letter-spacing:.02em}
+.tband .no small{font-size:13px;color:var(--gold2);margin-left:6px;letter-spacing:.16em}
+.tband h1{font-size:clamp(15px,1.6vw,20px);font-weight:300;letter-spacing:.14em}
+.tband .spec{margin:14px 0 0}
+.tband .p{white-space:nowrap}
+@media (max-aspect-ratio:1/1){
+  .tband{padding:18px 18px 24px;display:block}
+  .tband .en{font-size:9.5px;letter-spacing:.2em;gap:10px}.tband .en::before{width:22px}
+  .tband .cp{font-size:13px;letter-spacing:.12em;margin-top:8px}
+  .tband .nm{gap:10px;margin-top:6px}.tband .no{font-size:36px}.tband h1{font-size:14px;letter-spacing:.08em}
+  .tband .spec{margin:10px 0 12px;font-size:clamp(9.5px,2.75vw,11.5px);gap:5px}.tband .spec li{padding:3px 8px}
+  .tband .p b{font-size:clamp(24px,7vw,30px)}
+}
 .hero .media2 video{object-position:50% 50%}
 .bar .lang{display:flex;gap:9px;margin-left:auto;margin-right:12px;font-size:10px;letter-spacing:.12em;color:#cfc9bd;flex:0 0 auto;pointer-events:auto}
 .bar .lang a{cursor:pointer;opacity:.55;padding:6px 2px;border-bottom:1px solid transparent;-webkit-tap-highlight-color:transparent}
@@ -380,17 +404,18 @@ html[lang="zh"] .hero .info .p small{display:none}
 <header class="hero">
   <div class="media">
     <video class="lazy" muted loop playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page" preload="none" poster="img/poster_hero_pr.jpg" data-webm="video/hero_pr.webm" data-mp4="video/hero_pr.mp4" aria-label="ザ・パークハウス 武蔵小杉タワーズの公式映像"></video>
-    <div class="ov">
+    <div class="scroll">SCROLL</div>
+  </div>
+  <div class="tband">
+    <div class="l">
       <p class="en">The Parkhouse Musashi-Kosugi Towers — For Sale</p>
       <p class="cp" data-i18n="t003">武蔵小杉に立つ、二本の大樹。</p>
-      <p class="no">S4113<small>41F</small></p>
-      <h1 data-i18n="t004">ザ・パークハウス<br class="pc"> 武蔵小杉タワーズ</h1>
+      <div class="nm"><p class="no">S4113<small>41F</small></p><h1 data-i18n="t004">ザ・パークハウス<br class="pc"> 武蔵小杉タワーズ</h1></div>
       <ul class="spec">
       <li data-i18n="t005">サウス 41階</li><li>3LDK</li><li data-i18n="t006">専有 74.68㎡</li><li data-i18n="t007">武蔵小杉駅 徒歩3分</li><li data-i18n="t008">免震タワー</li>
     </ul>
-    <p class="p" data-i18n="t009"><span data-i18n="t112">販売価格</span><b data-i18n="t002">1億4,700万円</b></p>
     </div>
-    <div class="scroll">SCROLL</div>
+    <p class="p" data-i18n="t009"><span data-i18n="t112">販売価格</span><b data-i18n="t002">1億4,700万円</b></p>
   </div>
   <div class="media2">
     <video class="lazy" muted loop playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page" preload="none" poster="img/poster_pond.jpg" data-webm="video/pond.webm" data-mp4="video/pond.mp4" aria-label="グランドエントランスの水景"></video>
