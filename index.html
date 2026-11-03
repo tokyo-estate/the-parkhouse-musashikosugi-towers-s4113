@@ -343,10 +343,10 @@ figcaption .d{display:none}
 }
 @media (max-aspect-ratio:1/1){.hero .media{aspect-ratio:16/9;height:auto;min-height:0}.hero .media2{aspect-ratio:16/9}}
 @media (min-aspect-ratio:1/1){
-  .hero .media{aspect-ratio:auto;min-height:0;max-height:none;width:100%;height:min(56.25vw,calc(100svh - 232px))}
+  .hero .media{aspect-ratio:auto;min-height:0;max-height:none;width:100%;height:min(56.25vw,100svh)}
   .hero .media .ov,.hero .media .scroll{display:none!important}
-  .hero .media::after{background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 18%)!important}
-  .tband{background:#0b0d10;color:#fff;padding:20px 64px 22px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;border-bottom:1px solid rgba(201,169,98,.18)}
+  .hero .media::after{background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 18%,rgba(0,0,0,0) 62%,rgba(0,0,0,.78) 100%)!important}
+  .tband{position:absolute;left:0;right:0;bottom:0;z-index:2;background:none;color:#fff;padding:0 64px 56px;display:flex;align-items:flex-end;justify-content:space-between;gap:28px;flex-wrap:wrap;text-shadow:0 1px 10px rgba(0,0,0,.5)}
   .tband .l{min-width:0}
   .tband .en{display:flex;align-items:center;gap:14px;font-size:11px;letter-spacing:.32em;color:var(--gold2);text-transform:uppercase}
   .tband .en::before{content:"";width:34px;height:1px;background:var(--gold2)}
@@ -418,17 +418,17 @@ html[lang="zh"] .hero .info .p small{display:none}
     <p class="p" data-i18n="t009"><span data-i18n="t112">販売価格</span><b data-i18n="t002">1億4,700万円</b></p>
     </div>
     <div class="scroll">SCROLL</div>
-  </div>
   <div class="tband">
-    <div class="l">
-      <p class="en">The Parkhouse Musashi-Kosugi Towers — For Sale</p>
-      <p class="cp" data-i18n="t003">武蔵小杉に立つ、二本の大樹。</p>
-      <div class="nm"><p class="no">S4113<small>41F</small></p><p class="h1" data-i18n="t004">ザ・パークハウス<br class="pc"> 武蔵小杉タワーズ</p></div>
-      <ul class="spec">
-      <li data-i18n="t005">サウス 41階</li><li>3LDK</li><li data-i18n="t006">専有 74.68㎡</li><li data-i18n="t007">武蔵小杉駅 徒歩3分</li><li data-i18n="t008">免震タワー</li>
-    </ul>
+      <div class="l">
+        <p class="en">The Parkhouse Musashi-Kosugi Towers — For Sale</p>
+        <p class="cp" data-i18n="t003">武蔵小杉に立つ、二本の大樹。</p>
+        <div class="nm"><p class="no">S4113<small>41F</small></p><p class="h1" data-i18n="t004">ザ・パークハウス<br class="pc"> 武蔵小杉タワーズ</p></div>
+        <ul class="spec">
+        <li data-i18n="t005">サウス 41階</li><li>3LDK</li><li data-i18n="t006">専有 74.68㎡</li><li data-i18n="t007">武蔵小杉駅 徒歩3分</li><li data-i18n="t008">免震タワー</li>
+      </ul>
+      </div>
+      <p class="p" data-i18n="t009"><span data-i18n="t112">販売価格</span><b data-i18n="t002">1億4,700万円</b></p>
     </div>
-    <p class="p" data-i18n="t009"><span data-i18n="t112">販売価格</span><b data-i18n="t002">1億4,700万円</b></p>
   </div>
   <div class="media2">
     <video class="lazy" muted loop playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page" preload="none" poster="img/poster_pond.jpg" data-webm="video/pond.webm" data-mp4="video/pond.mp4" aria-label="グランドエントランスの水景"></video>
