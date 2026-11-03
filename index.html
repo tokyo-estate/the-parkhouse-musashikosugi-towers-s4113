@@ -334,6 +334,13 @@ figcaption .d{display:none}
 /* ---- ザ・パークハウス武蔵小杉タワーズS4113 ---- */
 /* PC: 公式PR映像のテロップ（画面中央）と重ならないよう、タイトルは映像の直下の帯に置く（2026-11-04 ユーザー指摘）。スマホは従来どおり映像の上 */
 .tband{display:none}
+.hero .ov2{display:none}
+/* スマホ: PR映像はテロップが多いのでタイトルは2本目（GRAND ENTRANCE の水景）の上に重ねる（2026-11-04 ユーザー指示） */
+@media (max-aspect-ratio:1/1){
+  .hero .media .ov{display:none!important}
+  .hero .media2 .ov2{display:block}
+  .hero .media2::after{background:linear-gradient(180deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,.15) 42%,rgba(0,0,0,0) 58%,rgba(0,0,0,.7) 100%)!important}
+}
 @media (max-aspect-ratio:1/1){.hero .media{aspect-ratio:16/9;height:auto;min-height:0}.hero .media2{aspect-ratio:16/9}}
 @media (min-aspect-ratio:1/1){
   .hero .media{aspect-ratio:auto;min-height:0;max-height:none;width:100%;height:min(56.25vw,calc(100svh - 232px))}
@@ -425,6 +432,11 @@ html[lang="zh"] .hero .info .p small{display:none}
   </div>
   <div class="media2">
     <video class="lazy" muted loop playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page" preload="none" poster="img/poster_pond.jpg" data-webm="video/pond.webm" data-mp4="video/pond.mp4" aria-label="グランドエントランスの水景"></video>
+    <div class="ov ov2">
+      <p class="cp" data-i18n="t003">武蔵小杉に立つ、二本の大樹。</p>
+      <p class="no">S4113<small>41F</small></p>
+      <h1 data-i18n="t004">ザ・パークハウス<br class="pc"> 武蔵小杉タワーズ</h1>
+    </div>
     <div class="lbl">
       <p class="k">Grand Entrance</p>
       <p class="t" data-i18n="t010">木々の先に、<br>きらめく水景</p>
